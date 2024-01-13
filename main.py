@@ -16,26 +16,26 @@ def main():
         with open("languages.json", "w") as data_file:
             json.dump(googletrans.LANGUAGES, data_file, indent=4)
 
+    # run application until user types 'exit'
     run = True
-    # print(list(data))
-
     while run:
         desired_language = input("Enter a language to translate to or type 'exit' to quit:\n").lower()
         if desired_language == 'exit':
             run = False
             break
         language_key = ""
-        # print(list(data.keys())[list(data.values()).index(desired_language)])
         try:
             # try to get the language key of the desired language (value)
             language_key = list(data.keys())[list(data.values()).index(desired_language)]
             translate_by_voice(language_key, data)
         except Exception:
             print("Invalid language entered")
+            
 
 def translate_by_voice(language_key, data):
+
+    # create a translator and recognizer object to recognize and translate audio input
     translator = Translator()
-    # create a recognizer object to understand what is said in mic
     recognizer = speech_recognition.Recognizer()
     run = True
 
@@ -53,11 +53,11 @@ def translate_by_voice(language_key, data):
                 if text == 'exit translator' or translator.translate(text, dest=language_key).text == 'exit translator':
                     run = False
 
-                # language_key = translator.detect(text).lang
                 print(f"Recognized language: {data[translator.detect(text).lang]}")
                 print(f"Recognized text: {text}")
                 print(f"Translated text: {translator.translate(text, dest=language_key).text}")
 
+        # catch and handle any exceptions and then re-initialize recogonizer and translator objects 
         except speech_recognition.UnknownValueError:
             print("Unreccognized audio received")
             recognizer = speech_recognition.Recognizer()
