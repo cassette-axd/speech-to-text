@@ -10,3 +10,5 @@ Link to APIs: https://pypi.org/project/SpeechRecognition/
 
 googletrans: a free and unlimited python library that implemented Google Translate API. This uses the Google Translate Ajax API to make calls to such methods as detect and translate. 
 Link to API documentation: https://py-googletrans.readthedocs.io/en/latest/
+
+JSON: an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays. It is a common data format with diverse uses in electronic data interchange, including that of web applications with servers.
