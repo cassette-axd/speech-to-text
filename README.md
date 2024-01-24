@@ -1,4 +1,6 @@
-# Overview
+# Personal Project: Speech-to-Text Translator App
+
+## Overview
 This app simulates a translation app where user can speak to their device and the app detects the language spoken and translates it to the desired language. The purpose of this personal object is to learn more about utilizing python libraries such as
 speech_recognition and googletrans and applying them to develop solutions for real world problems.
 
